@@ -8,27 +8,40 @@
     <style>
         .parent {
             border: 1px solid red;
-            width: 10px;
-            height: 10px;
-            animation: move 3s alternate 1s ease-in-out infinite;
+            width: 40px;
+            height: 40px;
+            animation: move 8s 1.5s ease-in-out infinite;
         }
 
         @keyframes move {
-            from {
-                margin-left: 0px;
+            0% {
+                margin: 0;
             }
 
-            to {
+            25% {
                 margin-left: 400px;
-            }
-
-            from {
-                transform: scale(1.0)
-            }
-
-            to {
+                margin-top: 0;
                 transform: scale(3.0);
             }
+
+            50% {
+                margin-left: 400px;
+                margin-top: 400px;
+                transform: scale(3.0);
+                background-color: red;
+            }
+
+            75% {
+                margin-left: 0;
+                margin-top: 400px;
+                transform: scale(1.0);
+                background-color: white;
+            }
+
+            100% {
+                margin: 0;
+            }
+
         }
     </style>
 </head>
