@@ -6,45 +6,57 @@
     <title>Это заголовок тайтл</title>
     <link rel="stylesheet" href="styles_day1.css">
     <style>
-        input:focus {
-            outline: 1px solid red;
-            box-shadow: 0 0 5px rgb(255, 89, 89);
+        @keyframes move {
+            from {
+                transform: rotate(0);
+            }
+
+            to {
+                transform: rotate(1turn);
+            }
         }
 
-        input::selection {
-            color: white;
-            background-color: blue;
+        @keyframes color_red {
+            from {
+                background-color: white;
+            }
+
+            to {
+                background-color: red;
+            }
+        }
+
+
+
+        .child {
+            width: 10px;
+            height: 10px;
+            border: 1px solid red;
+            border-radius: 5px;
+            margin-left: 40px;
+            margin-top: 40px;
+            transform-origin: 80px -120px;
+            animation: move 5s linear infinite, color_red 3000ms linear infinite;
         }
 
         .parent {
-            width: 200px;
-            height: 200px;
-            border: 1px solid black;
-            background-color: white;
-            text-align: center;
+            margin: 70px;
+            border: 1px solid red;
+            width: 100px;
+            height: 100px;
+            display: flex;
             justify-content: center;
             align-items: center;
-            display: flex;
-            flex-direction: column;
-            color: red;
-            transition: all 3s ease;
-        }
-
-        .parent:hover {
-            background: red;
-        }
-
-        #p1 {
-            color: white;
         }
     </style>
 </head>
 
 <body>
+
     <div class="parent">
-        <p id="p1">Постыдился бы)</p>
-        <p id="p2">Yaso Subibu</p>
+        ХУЙ
     </div>
+    <div class="child"></div>
 </body>
 
 </html>
